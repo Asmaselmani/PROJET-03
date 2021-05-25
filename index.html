@@ -10,129 +10,133 @@
     <link rel="stylesheet" href="style.css"/>
     </head>
 
-    <body>
+  <body>
      
 
-     <!--HEADER-->
-    <header class="page-daccueil">
-        <img class="header-image" src="images/logo/ohmyfood.png" alt="logo du site" >
-      </header>  
+      <!--HEADER-->
+    <header class="accueil">
+        <img src="images/logo/ohmyfood.png" alt="logo du site" >
+    </header>  
 
     <!--PRESENTATION-->
-
-
+    <div class="resto">
     <form class="formulaire">
         <i class="fas fa-map-marker-alt"></i>
         <input class="search_data" name="saisie" type="text" placeholder="Paris, Belleville" required />
         </form>
+
         <section class="presentation">
-          <h3> Réservez le menu qui vous convient</h3>
+          <h2> Réservez le menu qui vous convient</h2>
           <p>Découverez des restaurants d'exception,seléctionnés par nos soins.</p>
           <div class="btn"> Explorez nos restaurants</div>
         </section>
+        </div>
         
-      <!----MAIN---->
+      <!--MAIN-->
 
       <main class="container">
 
         <section class="fonctionnement">
-            <h3>Fonctionnement</h3>
-            <nav>
+          <h3>Fonctionnement</h3>
+          <nav>
             <ul style="list-style-type:decimal">
+              <li class="restaurant">
               <!--<ol>-->
-              <li class="restaurant"></li>
-              <div class="btn">Choisissez un restaurant</div>
-              <strong>1</strong>
-              <i class="fa fa-mobile" aria-hidden="true"></i>
-
-              <li class="menu"></li>
-              <div class="btn">Composez votre menu</li>  
-              <strong>2</strong>
-              <i class="fas fa-list"></i> 
-
-              <li class="degustation"></li>
-              <div class="btn">Dégustez au restaurant</div>
-              <strong>3</strong>
-              <i class="fas fa-store"></i>
+                <button>      
+                  <strong>1</strong>
+                  <i class="fa fa-mobile" aria-hidden="true"></i>
+                  Choisissez un restaurant
+                </button>
+              </li>
+              <li class="menu">
+                <button> 
+                  <strong>2</strong>
+                  <i class="fas fa-list"></i> 
+                  Composez votre menu
+                </button>
+              </li>
+              <li class="degustation">
+                <button>
+                  <strong>3</strong>
+                  <i class="fas fa-store"></i>
+                  Dégustez au restaurant
+                </button>
+              </li>
             </ul>
-            </nav>
-            </section>
+          </nav>
+        </section>
 
-            <section class="restaurants">
-            <div class="palette">
-               <a href="palette.html">
-                  <figure>
-                     <img src="images/restaurants/palette.jpg" alt="image La palette du goût"/>
-                     <figcaption>
-                        <h4>La palette du goût</h4>
-                        <p class="comment">Ménilmontant</p>
-                        <i class="far fa-heart"></i>
-                        <p class="new">nouveau</p>
-                     </figcaption>
-                   </figure>  
-                </a>
-            </div>   
-                   
-            <div class="enchantee">
-               <a href="enchantee.html">
-                   <figure>
-                       <img src="images/restaurants/enchantee.jpg" alt="image la note enchantée"/> 
-                       <figcaption>
-                        <h4> la note enchantée</h4>   
-                        <p class="comment">Charonne</p>
-                        <p class="new">nouveau</p>
-                       </figcaption>
-                   </figure>
-               </a> 
-            </div>   
+        <section class="restaurants">
+          <h2>Restaurants</h2>
+          <div class="palette">
+            <a href="palette.html">
+              <figure>
+                <img src="images/restaurants/palette.jpg" alt="image La palette du goût"/>
+                <figcaption>
+                  <h4>La palette du goût</h4>
+                  <p class="comment">Ménilmontant</p>
+                  <i class="far fa-heart"></i>
+                  <p class="new">nouveau</p>
+                </figcaption>
+              </figure>  
+            </a>
+          </div>            
+          <div class="enchantee">
+            <a href="enchantee.html">
+              <figure>
+                <img src="images/restaurants/enchantee.jpg" alt="image la note enchantée"/> 
+                <figcaption>
+                  <h4> la note enchantée</h4>   
+                  <p class="comment">Charonne</p>
+                  <p class="new">nouveau</p>
+                </figcaption>
+              </figure>
+            </a> 
+          </div>  
+          <div class="française">
+            <a href="française.html">
+              <figure>
+                <img src="images/restaurants/française.jpg" alt="image la française"/> 
+                <figcaption>
+                  <h4> A la française</h4>   
+                  <p class="comment">Cité rouge</p>
+                  <p class="new">nouveau</p>
+                </figcaption>
+              </figure>
+            </a> 
+          </div>       
+          <div class="delice">
+            <a href="delice.html">
+              <figure>
+                <img src="images/restaurants/delice.jpg" alt="image le délice"/> 
+                <figcaption>
+                  <h4> Le délice des sens</h4>   
+                  <p class="comment">Folie-Méricourt</p>
+                  <p class="new">nouveau</p>
+                </figcaption>
+              </figure>
+            </a> 
+          </div>    
+         </section>
+       </main>
 
-            <div class="française">
-                <a href="française.html">
-                    <figure>
-                        <img src="images/restaurants/française.jpg" alt="image la française"/> 
-                        <figcaption>
-                         <h4> A la française</h4>   
-                         <p class="comment">Cité rouge</p>
-                         <p class="new">nouveau</p>
-                        </figcaption>
-                    </figure>
-                </a> 
-             </div>       
-
-             <div class="delice">
-                <a href="delice.html">
-                    <figure>
-                        <img src="images/restaurants/delice.jpg" alt="image le délice"/> 
-                        <figcaption>
-                         <h4> Le délice des sens</h4>   
-                         <p class="comment">Folie-Méricourt</p>
-                         <p class="new">nouveau</p>
-                        </figcaption>
-                    </figure>
-                </a> 
-             </div>    
-             </section>
-             </main>
-
-             <!-----Footer---->
-             
-            <footer">
-                <img src="images/logo/ohmyfood.png" alt="logo du site">
-                <div>
-                    <i class="fas fa-utensils"></i>
-                    <a href="#">Proposer un restaurant</a>
-                  </div>
-                  <div>
-                    <i class="fas fa-hands-helping"></i>
-                    <a href="#">Devenir partenaire</a>
-                  </div>
-          
-                  <p>
-                    <a href="#">Mentions légales</a>
-                  </p>
-                  <p>
-                    <a href="mailto:asmaselmani5@gmail.com">Contact</a>
-                  </p>
-            </footer>
+        <!--Footer-->    
+        <footer>
+          <img src="images/logo/ohmyfood.png" alt="logo du site">
+          <div>
+            <i class="fas fa-utensils"></i>
+            <a href="#">Proposer un restaurant</a>
+          </div>
+          <div>
+            <i class="fas fa-hands-helping"></i>
+            <a href="#">Devenir partenaire</a>
+          </div>
+          <p>
+            <a href="#">Mentions légales</a>
+          </p>
+          <p>
+            <a href="mailto:asmaselmani5@gmail.com">Contact</a>
+          </p>
+        </footer>
       </body>
     </html>
