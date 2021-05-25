@@ -45,10 +45,19 @@ h4 , p{
   display: flex;
   justify-content: center;
   color: white;
+  font-size:16px;
   width: 60%;
   height: 40px;
   align-items: center;
   margin-left:70px;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.presentation .btn:hover {
+  background:linear-gradient(#a077d1,#f096d6 );;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .search_data{
@@ -67,6 +76,14 @@ h4 , p{
   padding:20px 0 20px;
 }
 
+ ul .fonctionnement {
+  width: 95%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
 
 
 
@@ -74,6 +91,7 @@ h4 , p{
 
 
 
+/*---container---*/
 
 .restaurants figure{
   width: 80%;
