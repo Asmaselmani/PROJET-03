@@ -290,6 +290,7 @@ footer img {
   a{
     text-decoration: none;
   }
+  
   .fa-check-circle {
     color: white;
     font-size: 23px;
@@ -297,13 +298,37 @@ footer img {
   .plat:hover .fa-check-circle {
     animation: rotation 1s;
     color:#99E2D0;
-    
   }
   
 .plat:hover div.confirmation {
 color: #99E2D0;
 transform: rotate(0deg);
 }
+.confirmation{
+  border-radius: 0 15px 15px 0;
+  
+}
+.confirmation:hover{
+  background-color: #99E2D0;
+  width: 20%;
+  animation-name: glissement;
+  animation-duration: 1s;
+}
+
+
+/*ANIMATIONS*/
+
+/*@keyframes glissement {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+*/
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
