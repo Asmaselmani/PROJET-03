@@ -8,32 +8,11 @@
 
 body{
   font-family: "Roboto", sans-serif;
+  color: #000000;
   width: 100%;
   padding:0;
   margin:0;
 }
-/*spiner {
-  object-fit: contain;
-  height: 40px;
-  border-radius: 0px 0px;
-  animation: rotation 3s;
-}
-.loading {
-  position: fixed;
-  text-align: center;
-  opacity: 0;
-  animation: loading 4s;
-  margin:30%;
-  width:40%;
-}
-.fa-glass-martini-alt {
-  font-size: 30px;
-  margin-bottom: 10px;
-  color: #9356DC;
-}
-.loader {
-  color: #9356DC;
-}*/
 
 
 /*---HEADER---*/
@@ -46,8 +25,8 @@ body{
   display: flex;
   justify-content: center;
 }
-.accueil img {
-  width: 50%;
+ .accueil img, .cartes img {
+  max-width: 50%;
   padding: 20px;
 }
  
@@ -58,35 +37,36 @@ body{
   justify-content: center;
   align-items: center;
 }
-/*h2{
-  font-family: Shrikhand;
-}*/
+
 .resto {
   background-color: #F5F5F5;
   height: 270px;
   width: 100%;
 }
 
-.presentation .btn, .commander { 
+.presentation .btn, .commander{ 
   border-radius: 20px;
   background: linear-gradient(#FF79DA,#9356DC );
   display: flex;
   justify-content: center;
   color: white;
   font-size:16px;
-  height: 40px;
+  height: 45px;
   align-items: center;
-  margin-left:60px;
-  margin-right: 60px;
+  align-self: center;
+  padding: 0 50px;
   cursor: pointer;
   transition-duration: 0.5s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  margin-top:20px;
 }
 .presentation .btn:hover, .commander:hover {
   background:linear-gradient(#f0a8df,#d076db );
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
-
+.plat:hover .fa-check-circle {
+  animation: rotation 1s;
+}
 .search_data{
   border: none;
   font-weight: bolder;
@@ -96,13 +76,22 @@ body{
 }
 .presentation {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.presentation p{
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: -10px;
 }
 
-.restaurants{
+.restau{
   background-color: #F2F2F2;
   padding:20px 0 20px;
 }
-
+ul{
+  list-style-type:none;
+}
  ul .fonctionnement {
   width: 95%;
   list-style: none;
@@ -111,9 +100,22 @@ body{
   flex-wrap: wrap;
   margin-left: -20px;
 }
+.container h2{
+  padding-left:40px;
+  margin-top:10px;
+}
 
 /*---container---*/
 
+p.new {
+  position: absolute;
+  right: 15px;
+  color: #008766;
+  background-color: #99E2D0;
+  font-weight: bold;
+  padding: 9px;
+  top:10px; 
+}
 .restaurants figure{
   width: 100%;
   height: 240px;
@@ -123,6 +125,7 @@ body{
   background-color: white;
   box-shadow: 5px 5px 10px #d4d0d0;
   animation: transparence 4s;
+  position: relative;
 }
 .restaurants img{
   width: 100%;
@@ -133,12 +136,17 @@ body{
 .restaurants figcaption{
   padding: 0 10px;
   line-height: 5px;
+  color:rgb(29, 28, 28);
 }
 
 .restaurants a{
   width: 100%;
   display: flex;
   text-decoration: none;
+}
+figure:hover{
+  transform:scale(1.05);
+  transition-duration: 1s;
 }
 strong {
     margin-right: 20px;
@@ -151,35 +159,30 @@ strong {
   }
   .fa-arrow-left {
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 20px;
-  }
-  p.new {
-    position: absolute;
-    right: 45px;
-    color: #008766;
-    background-color: #99E2D0;
-    font-weight: bold;
-    padding: 9px;
-    
-  }
-  .fa-heart {
-    cursor: pointer;
-    font-size: 25px;
-    position: relative;
-    color: #5b5a5a;
-    float: right;
-    bottom: 50px;
-    overflow: hidden;
+    font-size:20px;
+    color:#4c4949;
   }
   
-.fa-heart:hover {
-  color:#d076db ;
-  font-weight: bolder;
-  transition-duration:1s;
-  transform:scale(1.1)
+  .fa-heart {
+    font-size: 25px;
+    position: relative;
+    color:rgb(68, 67, 67);
+    float: right;
+    bottom: 50px;
+    transition-duration: 0.5s; 
 }
    
+.fa-heart:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  background: linear-gradient(#FF79DA 10%,#9356DC 95% );
+  transform: scale(1.1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+
  button {
   display: flex;
   align-items: center;
@@ -198,14 +201,11 @@ strong {
 button:hover{
   background-color:rgb(250, 231, 253);
 }
- h2{
-  padding-left:40px;
-}
 
 /*---FOOTER---*/
   
 footer img {
-  width: 35%;
+  max-width: 180px;
   padding-bottom: 15px;
   }
   
@@ -218,18 +218,24 @@ footer img {
     padding-left:20px;
     line-height: 28px;
     width: 100%;
+    height: 170px;
 }
   footer a {
     color:white;
-    margin-left:10px;
     text-decoration: none;
+  }
+  footer a:hover{
+    color:rgb(241, 161, 224)
   }
 
     /*--MENUS--*/
-
+.cartes{
+  display: flex;
+  justify-content: center;
+}
 .cartes img {
-  width: 50%;
-  padding: 20px 100px;
+  max-width: 50%;
+  padding: 20px;
   }
   
   .Container{
@@ -242,37 +248,45 @@ footer img {
   }
   .Container .fa-heart{
     position: relative;
-    left: 85%;
+    right: 40px;
   }
   
   .Container h2{
-    font-family:"Shrikhand", cursive;
+    font-family: "Shrikhand", cursive;
     font-size: 27px;
-    font-style: oblique;
     padding-left: 10px;
+    font-weight: 900;
   }
+.nom{
+  font-weight: 500;
+}
+.commentaire{
+  font-weight: 300;
+}
   .plat{
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 15px;
     padding-left: 20px;
     display: flex;
+    animation-delay: 0.5s;
     justify-content: space-between;
     margin-right: 20px;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 10px #d4d0d0
+    box-shadow: 5px 5px 10px #d4d0d0;
   }
-  .menus ,.plats{
-    margin-left:20px;
-  }
-    
+  
   .menus{
     margin-top:-30px;
+    margin-left:20px;
   } 
-  .entrées h4, .plats h4, .desserts h4 {
+   h4{
     font-size: 18px;
     font-weight: normal;
     border-bottom: 4px solid #99E2D0;
-    width: 12%;
+    width: 40px;
+  }
+  .bouton .commander{
+    border:none;
   }
   .prix{
     position: absolute;
@@ -281,53 +295,158 @@ footer img {
     padding-right: 20px;
     font-weight: bold;
   }
+  
   .francaise img,.delice img,.enchantee img, .palette img{
     width: 100%;
+    
   }
   .titre{
     padding-bottom: 10px;
   }
   a{
     text-decoration: none;
+    color:black;
   }
   
   .fa-check-circle {
     color: white;
     font-size: 23px;
-  }
+    position: relative;
+}
+  
   .plat:hover .fa-check-circle {
     animation: rotation 1s;
-    color:#99E2D0;
   }
   
-.plat:hover div.confirmation {
-color: #99E2D0;
-transform: rotate(0deg);
-}
 .confirmation{
   border-radius: 0 15px 15px 0;
-  
-}
-.confirmation:hover{
-  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20%;
-  animation-name: glissement;
-  animation-duration: 1s;
+  position: relative;
+  }
+
+
+.confirmation:hover {
+  background-color: #99e2d0;
+  transform: rotate(0);
+  padding-right:30px;
+  transition-duration: 0.6s;
+  animation-delay: 0.5s;
+ 
+  }
+  
+
+.bouton a{
+  display: flex;
+  justify-content: center;
+}
+.commander{
+  padding:0 90px;
 }
 
-
+.entrées{
+  animation:transparence 2s;
+  animation-delay: 1s;
+}
+.plats{
+  animation:transparence 3s;
+  animation-delay: 3s;
+}
+.desserts{
+  animation:transparence 5s;
+  animation-delay: 5s;
+} 
 /*ANIMATIONS*/
 
-/*@keyframes glissement {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
+@keyframes spin{
+  0% {transform: translateX(0);
+    
 }
-*/
+100% {
+    
+    transform: translateX(-9999px);
+}
+}
+.spinner {
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  animation: loader-page 3s ease-in normal forwards;
+  opacity: 1;
+  background: #eeecec;
+ }
+
+  .spinner .logo-loader {
+    width: auto;
+    height: 50px;
+    margin-bottom: 20px; }
+
+.loader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80px; 
+}
+  
+  .loader__circle1 {
+    width: 20px;
+    height: 20px;
+    animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+    animation-delay: 0.5s;
+    border-radius: 50%;
+    background: #9356DC; }
+  
+  .loader__circle2 {
+    width: 20px;
+    height: 20px;
+    animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+    animation-delay: 1s;
+    border-radius: 50%;
+    background: #FF79DA; }
+  
+  .loader__circle3 {
+    width: 20px;
+    height: 20px;
+    animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+    animation-delay: 1.5s;
+    border-radius: 50%;
+    background: #99E2D0; }
+    
+    @keyframes circle-sparkle {
+      from {
+        opacity: 0.3; }
+      to {
+        opacity: 1; } }
+    
+    @keyframes loader-page {
+      0% {
+        opacity: 1; }
+      75% {
+        opacity: 1; }
+      99% {
+        opacity: 0; }
+      100% {
+        visibility: hidden;
+        opacity: 0; } 
+      }
+    
+      @keyframes transparence {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
 @keyframes rotation {
   0% {
@@ -339,21 +458,101 @@ transform: rotate(0deg);
 }
 
 /*-----MEDIA-----*/
+@media screen and (min-width: 500px) {
 
-  @media screen and (min-width: 600px) {
-.fonctionnement ul{
+.fonctionnement ul {
   display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
- button{
-   flex-wrap:nowrap;
-   width: 100%;
-   padding-right: 30px;
- }  
- .fonctionnement h2{
-   padding-left:70px;
- }
- 
- 
- 
+button{
+  flex-wrap:nowrap;
+  width: 100%;
+  padding-right: 30px;
+}  
+}
+@media screen and (min-width: 720px) {
+footer div{
+  padding-right: 20px;
+}
+.footerdiv{
+  display: flex;
+  Justify-content: center;
+  padding-top: 30px; 
+  top:10px;
+  }
+
+footer img{
+  height: 30px;
+  display: flex;
+  align-self: center;
+}
+footer a{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.restaurants{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.restaurants a{
+  width: 360px;
+}
+.Container h2{
+  font-size:33px;
+}
+.entrées, .plats, .desserts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.plat{
+  position: relative;
+  align-items: center;
+}
+.menus{
+  padding: 40px 30px;
+}
+.delice img, .palette img, .francaise img, .enchantee img{
+  max-height: 400px;
+}
+.prix{
+  right: 10px;
+padding-top: 55px;
+}
+.confirmation:hover {
+  height: 125px;
+}
+.plat:hover .fa-check-circle {
+  animation: rotation 1s;
+  left:15px;
+}
+}
+@media screen and (min-width: 1000px) {
+  .container h2{
+    padding-left:100px;
+  }
+  .formulaire{
+    width: 25%;
+    position: relative;
+    top: -60px;
+    left: 20px;
+  }
+  .accueil img{
+    width: 20%;
+    position: relative;
+  }
+  .delice img, .palette img, .francaise img, .enchantee img{
+    max-height: 600px;
+}
+.delice, .palette, .francaise, .enchantee{
+  width: 80%;
+  margin:auto;
+}
+.cartes{
+  background-color: #F2F2F2;
+}
+}
