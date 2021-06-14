@@ -159,7 +159,7 @@ strong {
   }
   .fa-arrow-left {
     position: absolute;
-    top: 25px;
+    top: 45px;
     left: 20px;
     font-size:20px;
     color:#4c4949;
@@ -215,10 +215,10 @@ footer img {
     padding-top: 20px;
     display: flex;
     flex-direction:column;
-    padding-left:20px;
     line-height: 28px;
-    width: 100%;
+    max-width: 100%;
     height: 170px;
+    padding-left:20px;
 }
   footer a {
     color:white;
@@ -272,14 +272,15 @@ footer img {
     justify-content: space-between;
     margin-right: 20px;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 10px #d4d0d0;
+    box-shadow: 5px 5px 10px #807f7f;
+    height: 30%;
   }
   
-  .menus{
+  .menusfrancaise, .menusdelice, .menusenchantee, .menuspalette{
     margin-top:-30px;
     margin-left:20px;
   } 
-   h4{
+   .Container h4{
     font-size: 18px;
     font-weight: normal;
     border-bottom: 4px solid #99E2D0;
@@ -298,6 +299,7 @@ footer img {
   
   .francaise img,.delice img,.enchantee img, .palette img{
     width: 100%;
+    object-fit: cover;
     
   }
   .titre{
@@ -323,18 +325,26 @@ footer img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  width: 60px;
   position: relative;
-  }
-
+  animation-fill-mode:forwards;
+  height: 100%;
+ 
+}
+ 
+  
+.plat:hover .prix{
+  right: 80px;
+}
 
 .confirmation:hover {
   background-color: #99e2d0;
-  transform: rotate(0);
-  padding-right:30px;
-  transition-duration: 0.6s;
-  animation-delay: 0.5s;
+  transition-duration: 1s;
+  animation-delay: 1s;
+  transform: translateX(-60px);
  
+  
+  
   }
   
 
@@ -347,16 +357,18 @@ footer img {
 }
 
 .entrées{
-  animation:transparence 2s;
+  animation:transparence 1s;
   animation-delay: 1s;
+  
 }
 .plats{
   animation:transparence 3s;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
+
 .desserts{
   animation:transparence 5s;
-  animation-delay: 5s;
+  animation-delay: 1s;
 } 
 /*ANIMATIONS*/
 
@@ -491,11 +503,14 @@ footer a{
   font-size: 15px;
   font-weight: bold;
 }
-
+figure{
+  margin: 20px;
+  width: 90%;
+}
 .restaurants{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly
 }
 .restaurants a{
   width: 360px;
@@ -505,17 +520,25 @@ footer a{
 }
 .entrées, .plats, .desserts{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
+  margin-bottom: 30px;
+  
+}
+.menusfrancaise a, .menusdelice a, .menusenchantee a, .menuspalette a{
+  width: 100%;
+  height: 100px;
+}
+.menusenchantee .entrées a{
+  height: 130px;
+}
+.enchantee .entrées a{
+  height: 140px;
 }
 .plat{
   position: relative;
   align-items: center;
+  height: 100%;
 }
-.menus{
-  padding: 40px 30px;
-}
+
 .delice img, .palette img, .francaise img, .enchantee img{
   max-height: 400px;
 }
@@ -541,18 +564,50 @@ padding-top: 55px;
     top: -60px;
     left: 20px;
   }
-  .accueil img{
+  .accueil img {
     width: 20%;
-    position: relative;
   }
-  .delice img, .palette img, .francaise img, .enchantee img{
+  .accueil{
+    justify-content: flex-end;  
+  }
+  img.fra{
     max-height: 600px;
+    object-fit: contain;
 }
-.delice, .palette, .francaise, .enchantee{
-  width: 80%;
-  margin:auto;
+.enchantee img.fra{
+  max-height: 1000px;
 }
+
 .cartes{
   background-color: #F2F2F2;
+}
+.entrées , .desserts , .plats {
+flex-direction: column;
+width: 50%;
+margin-top:90px
+}
+.menusenchantee .entrées a{
+  height: 100px;
+}
+.menusfrancaise, .menusdelice, .menusenchantee, .menuspalette{
+  display: flex;
+align-items: first baseline;
+}
+.menusfrancaise a, .menusdelice a, .menusenchantee a, .menuspalette a{
+  width: 100%;
+  margin-bottom: 20px;
+  height: 100px;
+}
+.Container h4{
+    position: relative;
+    bottom: 80px;
+    left: 40px;
+}
+.bouton .commander{
+  top:10px;
+  left:0;
+}
+.Container h2{
+  padding-left: 50px;
 }
 }
