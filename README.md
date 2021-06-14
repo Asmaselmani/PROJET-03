@@ -1,5 +1,9 @@
 OHMYFOOD
 
+
+![image](https://user-images.githubusercontent.com/71886789/121903277-6f064580-cd28-11eb-8dcb-563a7b31002e.png)  ![image](https://user-images.githubusercontent.com/71886789/121903337-7c233480-cd28-11eb-9692-c847edaf0633.png)
+![image](https://user-images.githubusercontent.com/71886789/121903511-ad9c0000-cd28-11eb-9a6c-24531d33cf89.png)
+
 Troisième projet du parcours "Développeur web" chez OpenClassroom. L'objectif d'intégrer puis de dynamiser une page web avec des animations CSS en utilisant le préprocesseur Sass(facultatif).
 
 Objectifs
