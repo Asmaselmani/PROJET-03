@@ -1,9 +1,3 @@
-/*---animations---*/
-
-
-
-
-
 /*---body---*/
 
 body{
@@ -257,28 +251,40 @@ footer img {
     padding-left: 10px;
     font-weight: 900;
   }
+  .description{
+    line-height: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
 .nom{
   font-weight: 500;
 }
 .commentaire{
   font-weight: 300;
+  font-size: 15px;
 }
   .plat{
-    background-color: #FFFFFF;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+    background-color: #FFF;
     border-radius: 15px;
-    padding-left: 20px;
     display: flex;
     animation-delay: 0.5s;
-    justify-content: space-between;
-    margin-right: 20px;
-    margin-bottom: 20px;
     box-shadow: 5px 5px 10px #807f7f;
-    height: 30%;
-  }
+    margin-bottom: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+  
   
   .menusfrancaise, .menusdelice, .menusenchantee, .menuspalette{
     margin-top:-30px;
-    margin-left:20px;
+    margin-left:20px;  
   } 
    .Container h4{
     font-size: 18px;
@@ -293,7 +299,6 @@ footer img {
     position: absolute;
     right: 30px;
     padding-top:40px;
-    padding-right: 20px;
     font-weight: bold;
   }
   
@@ -326,28 +331,26 @@ footer img {
   align-items: center;
   justify-content: center;
   width: 60px;
-  position: relative;
-  animation-fill-mode:forwards;
-  height: 100%;
- 
-}
- 
-  
+  position: absolute;
+  transition-duration: 0.5s;
+  height: 80px;
+  max-height: 100%;
+  right: -60px;
+  background-color: #99e2d0;
+  }
+
+
 .plat:hover .prix{
   right: 80px;
 }
+.plat:hover .confirmation {
+  margin-right: -20px;
+  transform:translateX(-80px);
+  height: 100%;
+  
+}
 
-.confirmation:hover {
-  background-color: #99e2d0;
-  transition-duration: 1s;
-  animation-delay: 1s;
-  transform: translateX(-60px);
  
-  
-  
-  }
-  
-
 .bouton a{
   display: flex;
   justify-content: center;
@@ -358,18 +361,18 @@ footer img {
 
 .entrées{
   animation:transparence 1s;
-  animation-delay: 1s;
-  
 }
 .plats{
   animation:transparence 3s;
-  animation-delay: 1s;
 }
 
 .desserts{
   animation:transparence 5s;
-  animation-delay: 1s;
 } 
+.entrées, .plats, .desserts{
+  margin-bottom: 10px;
+  max-width: 100%;
+}
 /*ANIMATIONS*/
 
 @keyframes spin{
@@ -451,11 +454,14 @@ footer img {
         opacity: 0; } 
       }
     
+    
       @keyframes transparence {
         0% {
-          opacity: 0;
+          transform:scale(0);
+         opacity: 0;
         }
         100% {
+          transform:scale(1);
           opacity: 1;
         }
       }
@@ -521,58 +527,53 @@ figure{
 .entrées, .plats, .desserts{
   display: flex;
   margin-bottom: 30px;
-  
 }
-.menusfrancaise a, .menusdelice a, .menusenchantee a, .menuspalette a{
-  width: 100%;
-  height: 100px;
-}
+
 .menusenchantee .entrées a{
   height: 130px;
 }
 .enchantee .entrées a{
   height: 140px;
 }
-.plat{
-  position: relative;
-  align-items: center;
-  height: 100%;
-}
 
+.confirmation:hover {
+  height: 100px;
+}
 .delice img, .palette img, .francaise img, .enchantee img{
   max-height: 400px;
 }
 .prix{
   right: 10px;
-padding-top: 55px;
+  padding-top: 35px;
 }
-.confirmation:hover {
-  height: 125px;
-}
+
 .plat:hover .fa-check-circle {
   animation: rotation 1s;
-  left:15px;
+}
+.menusfrancaise a, .menusdelice a, .menusenchantee a, .menuspalette a{
+  height: 70px;
+  width: 33%;
 }
 }
 @media screen and (min-width: 1000px) {
   .container h2{
     padding-left:100px;
   }
-  .formulaire{
+.formulaire{
     width: 25%;
     position: relative;
     top: -60px;
     left: 20px;
   }
-  .accueil img {
-    width: 20%;
+.accueil img {
+  width: 20%;
   }
-  .accueil{
-    justify-content: flex-end;  
+.accueil{
+  justify-content: flex-end;  
   }
-  img.fra{
-    max-height: 600px;
-    object-fit: contain;
+img.fra{
+  max-height: 600px;
+  object-fit: contain;
 }
 .enchantee img.fra{
   max-height: 1000px;
@@ -581,28 +582,31 @@ padding-top: 55px;
 .cartes{
   background-color: #F2F2F2;
 }
-.entrées , .desserts , .plats {
-flex-direction: column;
-width: 50%;
-margin-top:90px
+.entrées, .desserts, .plats {
+  flex-direction: column;
+  width: 100%;
+  margin-top:90px
 }
 .menusenchantee .entrées a{
   height: 100px;
 }
 .menusfrancaise, .menusdelice, .menusenchantee, .menuspalette{
   display: flex;
-align-items: first baseline;
+  align-items: first baseline;
+  margin:0;
 }
 .menusfrancaise a, .menusdelice a, .menusenchantee a, .menuspalette a{
-  width: 100%;
+  
   margin-bottom: 20px;
-  height: 100px;
+  height: 70px;
+  width: 100%;
 }
 .Container h4{
     position: relative;
     bottom: 80px;
     left: 40px;
 }
+
 .bouton .commander{
   top:10px;
   left:0;
