@@ -246,7 +246,7 @@ footer img {
   }
   .Container .fa-heart{
     position: relative;
-    right: 40px;
+    right: 20px;
   }
   
   .Container h2{
@@ -260,6 +260,9 @@ footer img {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    width: 80%;
+  }
+  .plat:hover.description{
     width: 60%;
   }
   
@@ -270,10 +273,7 @@ footer img {
   font-weight: 300;
   font-size: 15px;
 }
-.plat:hover .commentaire, .nom{
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+
 
   .plat{
     position: relative;
@@ -311,7 +311,9 @@ footer img {
     padding-top:30px;
     font-weight: bold;
   }
-  
+  .enchantee{
+    max-height: 400px;
+  }
   .francaise img,.delice img,.enchantee img, .palette img{
     width: 100%;
     object-fit: cover;
@@ -561,6 +563,9 @@ figure{
   height: 70px;
   width: 33%;
 }
+.Container .fa-heart{
+  right: 50px;
+}
 }
 @media screen and (min-width: 1000px) {
   .container h2{
@@ -593,6 +598,9 @@ img.fra{
   flex-direction: column;
   width: 100%;
   margin-top:90px
+}
+.enchantee{
+  max-height: 600px;
 }
 .menusenchantee .entrées a{
   height: 100px;
