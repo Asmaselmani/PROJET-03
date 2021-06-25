@@ -257,9 +257,7 @@ footer img {
   }
   .description{
     line-height: 13px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    
     width: 80%;
   }
   .plat:hover.description{
@@ -268,10 +266,16 @@ footer img {
   
 .nom{
   font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .commentaire{
   font-weight: 300;
   font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 
